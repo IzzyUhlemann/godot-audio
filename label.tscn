@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://d3ree0uriyhs3"]
+
+[ext_resource type="Script" path="res://MusicController.gd" id="1_w7218"]
+[ext_resource type="PackedScene" uid="uid://coqqeghgq4pdt" path="res://music_player.tscn" id="2_4dv6n"]
+[ext_resource type="AudioStream" uid="uid://cxgie68mw7bav" path="res://music/MusicTest_VRC6Square2.ogg" id="3_v2f40"]
+[ext_resource type="AudioStream" uid="uid://cd8m10531gre1" path="res://music/MusicTest_Triangle.ogg" id="4_ninsw"]
+[ext_resource type="AudioStream" uid="uid://d0nc6iuj2wx2" path="res://music/MusicTest_Square1.ogg" id="4_vah2g"]
+[ext_resource type="AudioStream" uid="uid://bq72mkyfwu1fv" path="res://music/MusicTest_Square2.ogg" id="5_84vs3"]
+[ext_resource type="AudioStream" uid="uid://bmruwmps44wnf" path="res://music/MusicTest_VRC6Square1.ogg" id="5_lqw44"]
+[ext_resource type="AudioStream" uid="uid://cw2veirq23t1e" path="res://music/MusicTest_Noise.ogg" id="7_xa1ry"]
+[ext_resource type="AudioStream" uid="uid://cu52v5jdc38gf" path="res://music/MusicTest_VRC6Saw.ogg" id="8_d2ltg"]
+
+[node name="Main" type="Node"]
+
+[node name="MusicController" type="Node" parent="."]
+script = ExtResource("1_w7218")
+
+[node name="lead1" parent="MusicController" instance=ExtResource("2_4dv6n")]
+stream = ExtResource("4_vah2g")
+loop_beat = 32
+
+[node name="bass" parent="MusicController" instance=ExtResource("2_4dv6n")]
+stream = ExtResource("4_ninsw")
+loop_beat = 32
+
+[node name="bass2" parent="MusicController" instance=ExtResource("2_4dv6n")]
+stream = ExtResource("5_84vs3")
+loop_beat = 32
+
+[node name="drums" parent="MusicController" instance=ExtResource("2_4dv6n")]
+stream = ExtResource("7_xa1ry")
+loop_beat = 32
+
+[node name="lead2" parent="MusicController" instance=ExtResource("2_4dv6n")]
+stream = ExtResource("5_lqw44")
+loop_beat = 32
+
+[node name="lead2-2" parent="MusicController" instance=ExtResource("2_4dv6n")]
+stream = ExtResource("3_v2f40")
+loop_beat = 32
+
+[node name="pad" parent="MusicController" instance=ExtResource("2_4dv6n")]
+stream = ExtResource("8_d2ltg")
+loop_beat = 32
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MusicController"]

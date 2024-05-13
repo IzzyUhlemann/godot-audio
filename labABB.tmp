@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3ree0uriyhs3"]
+
+[ext_resource type="Script" path="res://MusicController.gd" id="1_w7218"]
+[ext_resource type="PackedScene" uid="uid://coqqeghgq4pdt" path="res://music_player.tscn" id="2_4dv6n"]
+[ext_resource type="AudioStream" uid="uid://10c2duw3dq6q" path="res://music/Gimmick.ogg" id="3_y3bgl"]
+[ext_resource type="AudioStream" uid="uid://bybn8y4kvato1" path="res://music/Tower of Heaven.ogg" id="4_57rdb"]
+
+[node name="Main" type="Node"]
+
+[node name="MusicController" type="Node" parent="."]
+script = ExtResource("1_w7218")
+
+[node name="city" parent="MusicController" instance=ExtResource("2_4dv6n")]
+stream = ExtResource("3_y3bgl")
+loop_beat = 32
+
+[node name="forest" parent="MusicController" instance=ExtResource("2_4dv6n")]
+stream = ExtResource("4_57rdb")
+loop_beat = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MusicController"]
